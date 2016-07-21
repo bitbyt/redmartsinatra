@@ -1,9 +1,4 @@
 class RedmartApp < Sinatra::Base
-  register Sinatra::AssetPipeline
-
-  get '/' do
-    haml :index
-  end
 
   get '/' do
     erb 'Hello, it me
@@ -14,5 +9,11 @@ class RedmartApp < Sinatra::Base
     @users = User.all
 
     erb :'users'
+  end
+
+  get '/users/:id' do
+    @user = User.find(params[:id])
+
+    erb :'each_user'
   end
 end

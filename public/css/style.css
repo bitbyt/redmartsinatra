@@ -1,0 +1,15 @@
+body { padding-top: 70px; }
+
+.navbar-default {
+  background-color: #000;
+}
+
+.navbar-brand-logo {
+  height: 20px;
+  width: 110px;
+  padding: 0;
+  background-image: url(../images/blackmart-logo-white.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%
+}
