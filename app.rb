@@ -1,4 +1,9 @@
 class RedmartApp < Sinatra::Base
+  register Sinatra::AssetPipeline
+
+  get '/' do
+    haml :index
+  end
 
   get '/' do
     erb 'Hello, it me
