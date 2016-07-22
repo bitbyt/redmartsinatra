@@ -2,22 +2,30 @@ body {
   padding-top: 50px;
   background: #4C4C47;
   color: #2D2D2A;
+  font-size: 1.5em;
 }
 
-h1, h2, h3 {
-  font-family: "brothers",sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "serenity",sans-serif;
+  font-weight: 	900;
+}
+
+h4, h5, h6 {
+  font-weight: 	300;
 }
 
 .jumbotron {
   background: #2D2D2A;
   color: #141301;
-  font-family: "brothers",sans-serif;
+  font-family: "serenity",sans-serif;
 }
 
 .btn {
   border-radius: 4rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   padding: 2rem 3rem;
+  font-family: "serenity",sans-serif;
+  font-weight: 	600;
 }
 
 .btn-hero {
@@ -32,7 +40,7 @@ h1, h2, h3 {
 }
 
 .navbar {
-
+  font-family: "serenity",sans-serif;
 }
 
 .navbar-default {
@@ -55,7 +63,8 @@ h1, h2, h3 {
 }
 
 .form-control {
-  border-radius: 0.8rem;
+  border-radius: 2rem;
+  padding: 3rem 1.5rem;
 }
 
 .divider {
