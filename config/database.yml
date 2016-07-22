@@ -1,3 +1,10 @@
 development:
   adapter: postgresql
-  database: redmart
+  database: blackmart_development
+
+
+production:
+  adapter: postgresql
+  database: datoel1o99j5o9
+  username: vftbfevkixgtpi
+  password: DY4IqWSUIqoxTOitjXi0qNzGg8
