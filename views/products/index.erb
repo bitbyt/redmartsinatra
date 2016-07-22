@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 center-block">
-      <h4 class="text-center">These are our users</h4>
+      <h4 class="text-center">These are our products</h4>
 
       <table class="table table-striped">
         <thead>
@@ -11,10 +11,10 @@
           </tr>
         </thead>
         <tbody>
-          <% @users.each do |user| %>
+          <% @products.each do |product| %>
           <tr>
-            <td><%= user[:id] %></td>
-            <td><a href="/users/<%= user[:id] %>"><%= user[:name] %></a></td>
+            <td><%= product[:id] %></td>
+            <td><a href="/products/<%= product[:id] %>"><%= product[:name] %></a></td>
           </tr>
           <% end %>
         </tbody>

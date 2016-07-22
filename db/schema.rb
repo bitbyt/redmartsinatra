@@ -10,42 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160721032658) do
+ActiveRecord::Schema.define(version: 20160721043428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
-    t.string   "photo_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "orders", id: false, force: :cascade do |t|
-  end
-
-  create_table "products", id: :integer, force: :cascade do |t|
-    t.text  "name",        null: false
-    t.text  "brand_id",    null: false
-    t.text  "category_id", null: false
-    t.float "price",       null: false
-  end
-
-  create_table "purchases", id: :integer, force: :cascade do |t|
-    t.integer "product_id",                             null: false
-    t.integer "user_id",                                null: false
-    t.date    "purchase_date", default: -> { "now()" }
-    t.boolean "status",                                 null: false
-  end
-
-  create_table "users", id: :integer, default: -> { "nextval('user_id_seq'::regclass)" }, force: :cascade do |t|
-    t.text   "name",                                            null: false
-    t.string "email",       limit: 50,                          null: false
-    t.string "address",     limit: 50
-    t.string "password",    limit: 50,                          null: false
-    t.string "cc_number",   limit: 50,                          null: false
-    t.date   "date_joined",            default: -> { "now()" }
+  create_table "users", force: :cascade do |t|
+    t.string   "name",       limit: 100
+    t.string   "email",      limit: 80
+    t.string   "address"
+    t.string   "password",   limit: 30
+    t.string   "cc_number",  limit: 19
+    t.string   "photo_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
