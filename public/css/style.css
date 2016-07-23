@@ -7,6 +7,15 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+a {
+  color: #848FA5;
+}
+
+a:hover {
+  color: #C14953;
+  text-decoration: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "serenity",sans-serif;
   font-weight: 	900;
@@ -23,12 +32,6 @@ h4, h5, h6 {
   /* background-image: url(../img/blackmart-hero-bg.jpg); */
   background-size: 100% auto;
   background-repeat: no-repeat;
-  margin-top: -50px;
-}
-
-
-.jumbotron > .btn-brand {
-  margin-top: 6rem;
 }
 
 .btn {
@@ -43,6 +46,7 @@ h4, h5, h6 {
   border: 2px solid  #141301;
   background: none;
   color:  #141301;
+  margin-top: 3rem;
 }
 
 .btn-hero:hover {
@@ -50,10 +54,36 @@ h4, h5, h6 {
   background:  #C14953;
 }
 
+.btn-brand {
+  border: 2px solid  #C14953;
+  background: none;
+  color:  #C14953;
+  margin-top: 3rem;
+}
+
+.btn-brand:hover {
+  border: 2px solid #C14953;
+  background:  #C14953;
+}
+
+.btn-base {
+  border: 2px solid  #2D2D2A;
+  background: none;
+  color:  #2D2D2A;
+  margin-top: 3rem;
+}
+
+.btn-base:hover {
+  border: 2px solid #2D2D2A;
+  background:  #2D2D2A;
+  color: #4C4C47;
+}
+
 .btn-submit {
   border: 2px solid  #C14953;
   background: none;
   color:  #C14953;
+  margin-top: 3rem;
 }
 
 .btn-submit:hover {
@@ -66,7 +96,7 @@ h4, h5, h6 {
 }
 
 .navbar-default {
-  background: none;
+  background-color: #141301;
   border-bottom: none;
 }
 
@@ -117,6 +147,10 @@ h4, h5, h6 {
   margin: 9px 0;
   overflow: hidden;
   background-color: #2D2D2A;
+}
+
+.divider-clear {
+  margin: 5rem 0;
 }
 
 .profile-pic {

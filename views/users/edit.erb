@@ -2,6 +2,7 @@
   <h2 class="text-center">Got something to change?</h2>
   <div class="divider"></div>
   <form action="/users/<%= @user[:id] %>" class="row" id="edit-user" method="POST">
+    <input type="hidden" name="_method" value="put">
     <div class="form-group col-sm-6">
       <label for="user_name">Name:</label>
       <input type='text' class="form-control" name='user[name]' id="user_name" value="<%= @user[:name] %>"/>

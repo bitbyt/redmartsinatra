@@ -4,6 +4,8 @@ class RedmartApp < Sinatra::Base
     erb :'index'
   end
 
+  # Users
+
   get '/users' do
     @users = User.all
     erb :'users/index'
@@ -17,12 +19,6 @@ class RedmartApp < Sinatra::Base
 
       erb :'users/show'
     end
-  end
-
-  get '/products' do
-    @products = Product.all
-
-    erb :'products/index'
   end
 
   get '/users/:id/edit' do
@@ -60,4 +56,21 @@ class RedmartApp < Sinatra::Base
       erb :"users/#{ @deleted_user.id }"
     end
   end
+
+  # Products
+
+  get '/products' do
+    @products = Product.all
+
+    erb :'products/index'
+  end
+
+  # Products
+
+  get '/categories' do
+    @categories = Category.all
+
+    erb :'categories/index'
+  end
+
 end

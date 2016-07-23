@@ -3,9 +3,9 @@
     <div class="col-md-12">
       <div class="text-center">
         <h1 class="text-center">Welcome Admin,</h1>
-        <h3 class="text-center">You can add, edit and delete products here.</h3>
+        <h3 class="text-center">You can add, edit and delete categories here.</h3>
         <a class="btn btn-lg btn-base" href="/">Go hard or go home</a>
-        <a class="btn btn-lg btn-brand" href="/products/new">Add a product</a>
+        <a class="btn btn-lg btn-brand" href="/categories/new">Add a category</a>
         <div class="divider divider-clear"></div>
       </div>
       <div class="table-responsive">
@@ -13,24 +13,18 @@
           <thead>
             <tr>
               <th>Id</th>
-              <th>Name</th>
-              <th>Brand</th>
-              <th>Date Created</th>
-              <th>Date Modified</th>
+              <th>Category</th>
               <th class="text-right">Actions</th>
             </tr>
           </thead>
           <tbody>
-            <% @products.each do |product| %>
+            <% @categories.each do |category| %>
             <tr>
-              <td><%= product[:id] %></td>
-              <td><a href="/products/<%= product[:id] %>"><%= product[:name] %></a></td>
-              <td><%= product[:address] %></td>
-              <td><%= product[:created_at] %></td>
-              <td><%= product[:updated_at] %></td>
+              <td><%= category[:id] %></td>
+              <td><a href="/categories/<%= category[:id] %>"><%= category[:category] %></a></td>
               <td class="text-right">
-                <a class="" href="/products/<%= product[:id] %>/edit">Edit</a>
-                <form action="/products/<%= product[:id] %>" id="delete-product" method="POST">
+                <a class="" href="/categories/<%= category[:id] %>/edit">Edit</a>
+                <form action="/categories/<%= category[:id] %>" id="delete-category" method="POST">
                   <input type="hidden" name="_method" value="delete">
                   <input type="submit" value="Delete" name="_method" class="">
                 </form>
