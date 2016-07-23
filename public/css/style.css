@@ -1,5 +1,6 @@
 body {
   padding-top: 50px;
+  padding-bottom: 50px;
   background: #4C4C47;
   color: #2D2D2A;
   font-size: 1.5em;
@@ -19,6 +20,15 @@ h4, h5, h6 {
   background: #2D2D2A;
   color: #141301;
   font-family: "serenity",sans-serif;
+  /* background-image: url(../img/blackmart-hero-bg.jpg); */
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  margin-top: -50px;
+}
+
+
+.jumbotron > .btn-brand {
+  margin-top: 6rem;
 }
 
 .btn {
@@ -40,12 +50,23 @@ h4, h5, h6 {
   background:  #C14953;
 }
 
+.btn-submit {
+  border: 2px solid  #C14953;
+  background: none;
+  color:  #C14953;
+}
+
+.btn-submit:hover {
+  border: 2px solid #C14953;
+  background:  #C14953;
+}
+
 .navbar {
   font-family: "serenity",sans-serif;
 }
 
 .navbar-default {
-  background-color: #141301;
+  background: none;
   border-bottom: none;
 }
 
@@ -63,9 +84,30 @@ h4, h5, h6 {
   background-image: url(../img/blackmart-logo-red.png);
 }
 
+.navbar-toggle {
+  background: none;
+  border: none;
+}
+
+.navbar-default .navbar-toggle:hover {
+  background: none;
+}
+
+.navbar-toggle:hover  > .icon-bar {
+  background: #C14953;
+}
+
 .form-control {
   border-radius: 2rem;
   padding: 3rem 1.5rem;
+  background: #4C4C47;
+  color: #141301;
+  border: 2px solid  #2D2D2A;
+}
+
+.form-textarea {
+  padding: 1.5rem;
+  resize: vertical;
 }
 
 .divider {
@@ -75,4 +117,24 @@ h4, h5, h6 {
   margin: 9px 0;
   overflow: hidden;
   background-color: #2D2D2A;
+}
+
+.profile-pic {
+  width: 150px;
+}
+
+.action-buttons a {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  float: left;
+  padding: 0.8rem 1.8rem;
+  font-size: 1.2rem;
+}
+
+.action-buttons input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  float: left;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.2rem;
 }

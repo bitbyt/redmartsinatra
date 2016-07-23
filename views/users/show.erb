@@ -1,8 +1,9 @@
-<div class="container">
-  <h2>This User</h2>
-  <div>
-    <img src="<%= @user[:photo_url] %>" alt="<%= @user[:name] %><" class="img-circle"/>
+<div class="container-fluid text-center">
+  <h2>Hi, <%= @user[:name] %></h2>
+  <div class="profile-pic center-block">
+    <img src="/img/users/<%= @user[:photo_url] %>" alt="<%= @user[:name] %>" class="img-responsive img-circle"/>
   </div>
-  <h4>Username: <%= @user[:name] %></h4>
-
+  <h4>Email: <%= @user[:email] %></h4>
+  <h4>Address: <%= @user[:address] %></h4>
+  <h4>Credit Card: <%= @user[:cc_number] %></h4>
 </div>

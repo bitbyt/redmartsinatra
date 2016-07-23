@@ -1,13 +1,14 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-6 center-block">
+    <div class="col-md-12">
       <h4 class="text-center">These are our users</h4>
 
-      <table class="table table-striped">
+      <table class="table">
         <thead>
           <tr>
             <th>Id</th>
             <th>Name</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -15,6 +16,12 @@
           <tr>
             <td><%= user[:id] %></td>
             <td><a href="/users/<%= user[:id] %>"><%= user[:name] %></a></td>
+            <td>
+              <a class="btn btn-link" href="/users/<%= user[:id] %>/edit">Edit</a>
+              <form action="/users/<%= user[:id] %>" id="delete-user" method="POST">
+                <input type="submit" value="Delete" name="_method" class="btn btn-link">
+              </form>
+            </td>
           </tr>
           <% end %>
         </tbody>

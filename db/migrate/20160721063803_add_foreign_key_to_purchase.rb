@@ -1,6 +1,6 @@
-class AddForeignKeyToPurchases < ActiveRecord::Migration
+class AddForeignKeyToPurchase < ActiveRecord::Migration
   def change
-    add_foreign_key :purchase, :products
-    add_foreign_key :purchase, :users
+    add_foreign_key :purchases, :products
+    add_foreign_key :purchases, :users
   end
 end

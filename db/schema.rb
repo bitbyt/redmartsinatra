@@ -10,13 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160721043428) do
+ActiveRecord::Schema.define(version: 20160721063803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
+    t.string   "photo_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "category", limit: 100
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string  "name",        limit: 100
+    t.string  "description"
+    t.integer "brand_id"
+    t.integer "category_id"
+    t.float   "price"
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "user_id"
+    t.boolean  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,10 +47,14 @@ ActiveRecord::Schema.define(version: 20160721043428) do
     t.string   "email",      limit: 80
     t.string   "address"
     t.string   "password",   limit: 30
-    t.string   "cc_number",  limit: 19
+    t.integer  "cc_number"
     t.string   "photo_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_foreign_key "products", "brands"
+  add_foreign_key "products", "categories"
+  add_foreign_key "purchases", "products"
+  add_foreign_key "purchases", "users"
 end
