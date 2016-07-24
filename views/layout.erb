@@ -6,7 +6,7 @@
     <title>Welcome to Blackmart</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="<%= url('/css/style.css') %>" media="screen" title="no title" charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <script src="https://use.typekit.net/jfh1pyt.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <script src="https://use.fontawesome.com/bf8cb3f9af.js"></script>
@@ -44,7 +44,9 @@
       </div>
     </nav>
       <%= yield %>
+    <footer>Copyright Black Market is a fucking horrible place.</footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="<%= url('/js/main.js') %>"></script>
   </body>
 </html>

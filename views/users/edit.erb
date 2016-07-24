@@ -1,6 +1,10 @@
 <div class="container-fluid">
-  <h2 class="text-center">Got something to change?</h2>
-  <div class="divider"></div>
+  <div class="profile-pic center-block">
+    <img src="/img/users/<%= @user[:photo_url] %>" alt="<%= @user[:name] %>" class="img-responsive img-circle"/>
+  </div>
+  <h1 class="text-center">Hey, <%= @user[:name] %></h1>
+  <h3 class="text-center">Got something to change?</h3>
+  <div class="divider divider-clear"></div>
   <form action="/users/<%= @user[:id] %>" class="row" id="edit-user" method="POST">
     <input type="hidden" name="_method" value="put">
     <div class="form-group col-sm-6">
@@ -13,7 +17,7 @@
     </div>
     <div class="form-group col-sm-12">
       <label for="user_address">Address:</label>
-      <textarea class="form-control form-textarea col-sm-12" rows="3" name='user[address]' id="address" value="<%= @user[:address] %>"></textarea>
+      <textarea class="form-control form-textarea col-sm-12" rows="3" name='user[address]' id="address" value="<%= @user[:address] %>"><%= @user[:address] %></textarea>
     </div>
     <div class="form-group col-sm-6">
       <label for="user_password">Password:</label>
@@ -23,13 +27,20 @@
       <label for="user_cc_number">Credit Card:</label>
       <input type='text' class="form-control" name='user[cc_number]' id="cc_number" value="<%= @user[:cc_number] %>"/>
     </div>
-    <div class="form-group col-sm-12">
-      <label for="user_photo_url">Photo:</label>
+    <div class="form-group col-sm-6">
+      <label for="user_photo_url">Profile Photo:</label>
       <input type='text' class="form-control" name='user[photo_url]' id="photo_url" value="<%= @user[:photo_url] %>"/>
     </div>
+    <div class="form-group col-sm-6">
+      <label for="user_cover_url">Cover Photo:</label>
+      <input type='text' class="form-control" name='user[cover_url]' id="cover_url" value="<%= @user[:cover_url] %>"/>
+    </div>
 
-    <div class="col-sm-12">
-      <input type="submit" value="Submit" name="submit" class="btn btn-submit btn-block">
+    <div class="col-sm-6">
+      <input type="submit" value="Save this thug" name="submit" class="btn btn-submit btn-block">
+    </div>
+    <div class="col-sm-6">
+      <a class="btn btn-lg btn-base btn-block" href="/users">Cancel this shit</a>
     </div>
   </form>
 </div>

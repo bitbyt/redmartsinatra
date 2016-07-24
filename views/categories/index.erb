@@ -6,33 +6,40 @@
         <h3 class="text-center">You can add, edit and delete categories here.</h3>
         <a class="btn btn-lg btn-base" href="/">Go hard or go home</a>
         <a class="btn btn-lg btn-brand" href="/categories/new">Add a category</a>
-        <div class="divider divider-clear"></div>
       </div>
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Category</th>
-              <th class="text-right">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @categories.each do |category| %>
-            <tr>
-              <td><%= category[:id] %></td>
-              <td><a href="/categories/<%= category[:id] %>"><%= category[:category] %></a></td>
-              <td class="text-right">
-                <a class="" href="/categories/<%= category[:id] %>/edit">Edit</a>
-                <form action="/categories/<%= category[:id] %>" id="delete-category" method="POST">
-                  <input type="hidden" name="_method" value="delete">
-                  <input type="submit" value="Delete" name="_method" class="">
-                </form>
-              </td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
+      <div class="panel panel-default divider-clear">
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Category</th>
+                  <th class="text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @categories.each do |category| %>
+                <tr>
+                  <td><%= category[:id] %></td>
+                  <td><%= category[:category] %></td>
+                  <td class="text-right">
+                    <ul class="table-link">
+                      <li><a href="/categories/<%= category[:id] %>/edit" data-toggle="tooltip" title="Edit Category"><i class="fa fa-edit"></i></a></li>
+                      <li>
+                        <form action="/categories/<%= category[:id] %>" id="delete-category" method="POST">
+                          <input type="hidden" name="_method" value="delete">
+                          <input type="submit" value="&#xf00d" name="_method" class="fa-input" data-toggle="tooltip" title="Delete Category">
+                        </form>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>

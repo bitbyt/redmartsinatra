@@ -6,39 +6,44 @@
         <h3 class="text-center">You can add, edit and delete products here.</h3>
         <a class="btn btn-lg btn-base" href="/">Go hard or go home</a>
         <a class="btn btn-lg btn-brand" href="/products/new">Add a product</a>
-        <div class="divider divider-clear"></div>
       </div>
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Name</th>
-              <th>Brand</th>
-              <th>Date Created</th>
-              <th>Date Modified</th>
-              <th class="text-right">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @products.each do |product| %>
-            <tr>
-              <td><%= product[:id] %></td>
-              <td><a href="/products/<%= product[:id] %>"><%= product[:name] %></a></td>
-              <td><%= product[:address] %></td>
-              <td><%= product[:created_at] %></td>
-              <td><%= product[:updated_at] %></td>
-              <td class="text-right">
-                <a class="" href="/products/<%= product[:id] %>/edit">Edit</a>
-                <form action="/products/<%= product[:id] %>" id="delete-product" method="POST">
-                  <input type="hidden" name="_method" value="delete">
-                  <input type="submit" value="Delete" name="_method" class="">
-                </form>
-              </td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
+      <div class="panel panel-default divider-clear">
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Price</th>
+                  <th class="text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @products.each do |product| %>
+                <tr>
+                  <td><%= product[:id] %></td>
+                  <td><a href="/products/<%= product[:id] %>"><%= product[:name] %></a></td>
+                  <td><%= product[:description] %></td>
+                  <td><%= product[:price] %></td>
+                  <td class="text-right">
+                    <ul class="table-link">
+                      <li><a href="/products/<%= product[:id] %>/edit" data-toggle="tooltip" title="Edit Product"><i class="fa fa-edit"></i></a></li>
+                      <li>
+                        <form action="/products/<%= product[:id] %>" id="delete-product" method="POST">
+                          <input type="hidden" name="_method" value="delete">
+                          <input type="submit" value="&#xf00d" name="_method" class="fa-input" data-toggle="tooltip" title="Delete Product">
+                        </form>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>

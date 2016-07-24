@@ -1,0 +1,22 @@
+<div class="jumbotron jumbotron-shop text-center">
+  <div class="container-fluid">
+    <h1>Watchu lookin for fam?</h1>
+    <h3>Say no more - whatever you need, we've got you covered.</h3>
+    <a class="btn btn-lg btn-hero" href="/">Go hard or go home</a>
+    <a class="btn btn-lg btn-brand" href="/users/new">Join the fam</a>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <% @products.each do |product| %>
+    <div class="col-sm-6 col-md-4 card">
+      <div class="photo product-pic" style="background-image: url(/img/products/<%= product[:photo_url] %>)"></div>
+      <div class="content-middle">
+        <h3><%= product[:name] %></h3>
+        <h4>$<%= product[:price] %></h4>
+      </div>
+      <a href="#" class="btn btn-buy btn-card">Buy Now</a>
+    </div>
+    <% end %>
+  </div>
+</div>

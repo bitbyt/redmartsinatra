@@ -3,9 +3,9 @@
     <div class="col-md-12">
       <div class="text-center">
         <h1 class="text-center">Welcome Admin,</h1>
-        <h3 class="text-center">You can add, edit and delete users here.</h3>
+        <h3 class="text-center">You can add, edit and delete brands here.</h3>
         <a class="btn btn-lg btn-base" href="/">Go hard or go home</a>
-        <a class="btn btn-lg btn-brand" href="/users/new">Add a thug</a>
+        <a class="btn btn-lg btn-brand" href="/brands/new">Add a brand</a>
       </div>
       <div class="panel panel-default divider-clear">
         <div class="panel-body">
@@ -14,28 +14,22 @@
               <thead>
                 <tr>
                   <th>Id</th>
-                  <th>Name</th>
-                  <th>Address</th>
-                  <th>Date Created</th>
-                  <th>Date Modified</th>
+                  <th>Brand</th>
                   <th class="text-right">Actions</th>
                 </tr>
               </thead>
               <tbody>
-                <% @users.each do |user| %>
+                <% @brands.each do |brand| %>
                 <tr>
-                  <td><%= user[:id] %></td>
-                  <td><a href="/users/<%= user[:id] %>"><%= user[:name] %></a></td>
-                  <td><%= user[:address] %></td>
-                  <td><%= user[:created_at] %></td>
-                  <td><%= user[:updated_at] %></td>
+                  <td><%= brand[:id] %></td>
+                  <td><%= brand[:name] %></td>
                   <td class="text-right">
                     <ul class="table-link">
-                      <li><a href="/users/<%= user[:id] %>/edit" data-toggle="tooltip" title="Edit User"><i class="fa fa-edit"></i></a></li>
+                      <li><a href="/brands/<%= brand[:id] %>/edit" data-toggle="tooltip" title="Edit Brand"><i class="fa fa-edit"></i></a></li>
                       <li>
-                        <form action="/users/<%= user[:id] %>" id="delete-user" method="POST">
+                        <form action="/brands/<%= brand[:id] %>" id="delete-brand" method="POST">
                           <input type="hidden" name="_method" value="delete">
-                          <input type="submit" value="&#xf00d" name="_method" class="fa-input" data-toggle="tooltip" title="Delete User">
+                          <input type="submit" value="&#xf00d" name="_method" class="fa-input" data-toggle="tooltip" title="Delete Brand">
                         </form>
                       </li>
                     </ul>

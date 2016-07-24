@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <h2 class="text-center">Add a Category</h2>
+  <div class="divider divider-clear"></div>
+  <form class="category row" id="add-category" method="POST" action="/categories">
+    <div class="form-group col-sm-12">
+      <label for="category_name">Category:</label>
+      <input type='text' class="form-control" name='category[category]' id="category_name" placeholder="Category"/>
+    </div>
+
+    <div class="col-sm-6">
+      <input type="submit" value="Add a cat a gory" name="submit" class="btn btn-submit btn-block">
+    </div>
+    <div class="col-sm-6">
+      <a class="btn btn-lg btn-base btn-block" href="/categories">Cancel this shit</a>
+    </div>
+  </form>
+</div>
